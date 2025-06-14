@@ -182,19 +182,21 @@ export function ChatArea({ toggleSidebar, messages, onUpdateMessages, onCreateNe
 
   return (
     <div className="flex flex-col h-full">
-      {/* Glass Header */}
+      {/* Glass Header - Menu button now visible on all screen sizes */}
       <header className="glass-strong border-b border-white/10 sticky top-0 z-10 shadow-lg">
         <div className="flex items-center justify-between p-4 sm:p-6">
           <div className="flex items-center gap-3">
+            {/* Menu button visible on all screen sizes */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleSidebar}
-              className="rounded-xl hover:glass-subtle transition-all duration-300 text-glass lg:hidden"
+              className="rounded-xl hover:glass-subtle transition-all duration-300 text-glass"
+              title="Open chat history"
             >
               <Menu className="h-5 w-5" />
             </Button>
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="flex items-center gap-3">
               <div className="p-2 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg">
                 <Beaker className="h-5 w-5 text-white" />
               </div>
@@ -234,6 +236,11 @@ export function ChatArea({ toggleSidebar, messages, onUpdateMessages, onCreateNe
               <p className="text-glass-muted">
                 Start a conversation with our AI assistant. Ask questions, get help, or just chat!
               </p>
+              <div className="glass-subtle rounded-xl p-4 text-sm text-glass-muted">
+                <p className="mb-2">
+                  💡 <strong>Tip:</strong> Click the menu button (☰) to access your chat history
+                </p>
+              </div>
             </div>
           </div>
         )}
